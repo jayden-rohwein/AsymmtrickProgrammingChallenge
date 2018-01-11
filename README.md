@@ -69,22 +69,26 @@ Specification
 
 Implementation 
 
+        
+     Ternary Search Tree to store word suggestions
+     
+            Autocomplete Provider is implemented as a  Ternary Search Tree, this is an 
+            efficient solution given that many words "share letters" or nodes. While this
+            does contain more overhead then other solutions, the vast quantity of words 
+            justifies its use.
 
-    Autocomplete Provider is implemented as a  Ternary Search Tree, this is an 
-    efficient solution given that many words "share letters" or nodes. While this
-    does contain more overhead then other solutions, the vast quantity of words 
-    justifies its use.
+            The TST implementation does not play nice with the Candidate specification, as
+            there would be no need to store complete words explicitly with a TST, given the
+            restraints of the problem I still feel this was an effective solution.
 
-    The TST implementation does not play nice with the Candidate specification, as
-    there would be no need to store complete words explicitly with a TST, given the
-    restraints of the problem I still feel this was an effective solution.
+        Priority Queue for Candidates
 
-    a priorityQueue is used to sort the candidates based on there confidence. This
-    does not inherit from List and must be placed in a Linked List. Depending on
-    the context of the problem this might have been better handled. Given my interpretation,
-    I "assumed" only a the few top results are useful for word suggestion, and 
-    exact ordering might not be that important given this is only a mobile keyboard. 
-    I thought a heap would be the most efficient way to handle such a problem.
+            a priorityQueue is used to sort the candidates based on there confidence. This
+            does not inherit from List and must be placed in a Linked List. Depending on
+            the context of the problem this might have been better handled. Given my interpretation,
+            I "assumed" only a the few top results are useful for word suggestion, and 
+            exact ordering might not be that important given this is only a mobile keyboard. 
+            I thought a heap would be the most efficient way to handle such a problem.
 
 
 
